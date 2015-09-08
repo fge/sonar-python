@@ -1,0 +1,6 @@
+[submodule "python-test-sources"]
+	path = python-test-sources
+	url = git@github.com:SonarCommunity/python-test-sources.git
+[submodule "its/sources"]
+	path = its/sources
+	url = git@github.com:SonarCommunity/python-test-sources.git
