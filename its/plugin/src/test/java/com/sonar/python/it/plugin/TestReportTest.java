@@ -55,7 +55,7 @@ public class TestReportTest {
 
   @Test
   public void import_report() throws Exception {
-    orchestrator.executeBuild(createBuild("nosetests.xml"));
+    orchestrator.executeBuild(createBuild("nosetests.xml").setProperty("sonar.python.xunit.skipDetails", "false"));
     assertProjectMeasures(PROJECT, new ImmutableMap.Builder<String, Integer>()
       .put("tests", 3)
       .put("test_failures", 1)
@@ -74,7 +74,6 @@ public class TestReportTest {
       .put("test_failures", 1)
       .put("test_errors", 1)
       .put("skipped_tests", 1)
-      .put("test_success_density", 33)
       .put("test_execution_time", 1)
       .build());
   }
